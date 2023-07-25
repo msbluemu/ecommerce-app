@@ -8,14 +8,14 @@ function ProductItem({product, onAddToCart}) {
     
  
      return(
-        <li key={id} className="card">
+        <div key={id} className="product">
           <Link to={`/product/${id}`}>
               <img src={thumbnail} />
           </Link>
           <h4>{title}</h4>
           <p>Price: {price}</p>
           <button onClick={() => onAddToCart(product)}>Add to cart</button>
-         </li>
+         </div>
      );
 }
 
