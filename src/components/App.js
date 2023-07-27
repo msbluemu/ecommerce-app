@@ -41,15 +41,17 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="app-container">
       <NavBar/>
-      <Routes>
-        <Route path="/" element={<ProductList products={products} onAddToCart={handleAddToCart}/>} />
-        <Route path="/cart" element={<Cart items={cartItems} isInCart={isInCart} cartPrice={cartPrice}/> } />
-        <Route path="/products/categoty/:category" element={<Categories/>  } />
-        <Route path="/product/:id" element={<ProductDetails products={products} />} />
-        <Route path="/checkout" element={<Checkout />}/>
-      </Routes>
+      <div className="content-container">
+        <Routes>
+          <Route path="/" element={<ProductList products={products} onAddToCart={handleAddToCart}/>} />
+          <Route path="/cart" element={<Cart items={cartItems} isInCart={isInCart} cartPrice={cartPrice}/> } />
+          <Route path="/products/categoty/:category" element={<Categories/>  } />
+          <Route path="/product/:id" element={<ProductDetails products={products} onAddToCart={handleAddToCart} cartPrice={cartPrice}/>} />
+          <Route path="/checkout" element={<Checkout />}/>
+        </Routes>
+      </div>
     </div>
   )
 }

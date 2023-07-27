@@ -19,7 +19,7 @@ function Cart({items, isInCart, cartPrice}){
               </div>
         </div>
       ))}
-           {isInCart? <h3>Subtotal (1 item): {cartPrice} </h3> : null}
+           {isInCart? <h3>Subtotal : {cartPrice} </h3> : null}
        {
           isInCart? <button onClick={() => navigate("/checkout") }>Pay Now</button> : null
         }

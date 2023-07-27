@@ -20,7 +20,7 @@ function Categories(){
     }, [category]);
     
     return (
-      <ul className="cards">
+      <ul className="categories">
       {categoryItems.map((item) => (
         /* Render each product item using the ProductItem component */
         <ProductItem product={item} className="card" key={item.id} />
