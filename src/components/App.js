@@ -13,6 +13,7 @@ import Categories from "./Categories";
 import ProductDetails from "./ProductDetails";
 import Checkout from "./Checkout";
 
+
 function App() {
 
   const[products, setProducts] = useState([]);
@@ -40,12 +41,13 @@ function App() {
     }
   }
 
+
   return (
     <div className="app-container">
-      <NavBar/>
+      <NavBar />
       <div className="content-container">
         <Routes>
-          <Route path="/" element={<ProductList products={products} onAddToCart={handleAddToCart}/>} />
+          <Route path="/" element={<ProductList products={products} onAddToCart={handleAddToCart} setProducts={setProducts}/>} />
           <Route path="/cart" element={<Cart items={cartItems} isInCart={isInCart} cartPrice={cartPrice}/> } />
           <Route path="/products/categoty/:category" element={<Categories/>  } />
           <Route path="/product/:id" element={<ProductDetails products={products} onAddToCart={handleAddToCart} cartPrice={cartPrice}/>} />

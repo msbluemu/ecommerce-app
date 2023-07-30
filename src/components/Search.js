@@ -1,9 +1,8 @@
 import { React, useState } from "react";
 import ProductItem from "./ProductItem";
 import { useNavigate } from "react-router-dom";
-import Search from "./Search";
 
-function ProductList({ products, setProducts, onAddToCart }) {
+function Search({ products, setProducts, onAddToCart }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterList, setFilterList] = useState([]);
   const navigate = useNavigate();
@@ -18,12 +17,12 @@ function ProductList({ products, setProducts, onAddToCart }) {
     const filteredProducts = products.filter(
       (product) => product.title.toLowerCase().includes(query.toLowerCase())
     );
-    setFilterList(filteredProducts)
+    setFilterList(filteredProducts);
   }
 
   return (
     <div>
-     <div className="searchbar">
+      <div className="searchbar">
         <label htmlFor="search">Search a product:</label>
         <input
           type="text"
@@ -42,4 +41,4 @@ function ProductList({ products, setProducts, onAddToCart }) {
   );
 }
 
-export default ProductList;
+export default Search;
