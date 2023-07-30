@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-function ProductDetails({products, onAddToCart, cartPrice}) {
+function ProductDetails({products, onAddToCart}) {
     const { id } = useParams();
   
     const product = products.find((product) => product.id === parseInt(id));

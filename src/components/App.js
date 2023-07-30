@@ -18,8 +18,7 @@ function App() {
 
   const[products, setProducts] = useState([]);
   const[cartItems, setCartItems] = useState([]);
-  const [isInCart, setIsInCart] = useState(false)
-  const [cartPrice, setCartPrice] = useState("")
+  const [isInCart, setIsInCart] = useState(false);
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
@@ -30,17 +29,31 @@ function App() {
      });
   }, []);
 
- 
-  function handleAddToCart(item) {
-    setCartItems([...cartItems, item]);
-
-    if(cartItems) {
-      setIsInCart(true);
-      const totalCartPrice = cartItems.reduce((total, cartItem) => total + cartItem.price, 0)
-      setCartPrice(item.price + totalCartPrice)
-    }
+  function handleAddToCart(product) {
+   const productExist = cartItems.find((item) => item.id === product.id)
+   if(productExist){
+    setCartItems(cartItems.map((item) => item.id === product.id ?
+    {...productExist, quantity: productExist.quantity + 1} : item)
+    );
+   } else{
+    setCartItems([...cartItems, {...product, quantity : 1}]);
+    setIsInCart(true)
+   }
   }
 
+ function handleRemoveCart(removedItem){
+   const productExist = cartItems.find((item) => item.id === removedItem.id);
+   if(productExist.quantity === 1){
+    setCartItems(cartItems.filter((item) => item.id !== removedItem.id));
+   } else {
+    setCartItems(cartItems.map((item) =>
+                item.id === removedItem.id ? { ...item, quantity: item.quantity - 1 } : item
+      )
+    );
+  }
+}
+
+const totatPrice = cartItems.reduce((price, item) => price + item.quantity * item.price, 0)
 
   return (
     <div className="app-container">
@@ -48,10 +61,10 @@ function App() {
       <div className="content-container">
         <Routes>
           <Route path="/" element={<ProductList products={products} onAddToCart={handleAddToCart} setProducts={setProducts}/>} />
-          <Route path="/cart" element={<Cart items={cartItems} isInCart={isInCart} cartPrice={cartPrice}/> } />
+          <Route path="/cart" element={<Cart cartItems={cartItems} isInCart={isInCart} onRemoveCart={handleRemoveCart} onAddToCart={handleAddToCart} totatPrice={totatPrice}/>  } />
           <Route path="/products/categoty/:category" element={<Categories/>  } />
-          <Route path="/product/:id" element={<ProductDetails products={products} onAddToCart={handleAddToCart} cartPrice={cartPrice}/>} />
-          <Route path="/checkout" element={<Checkout />}/>
+          <Route path="/product/:id" element={<ProductDetails products={products} onAddToCart={handleAddToCart} />} />
+          <Route path="/checkout" element={<Checkout cartItems={cartItems} totalPrice={totatPrice} />}/>
         </Routes>
       </div>
     </div>

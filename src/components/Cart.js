@@ -2,26 +2,34 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-function Cart({items, isInCart, cartPrice}){
+function Cart({cartItems,onRemoveCart, onAddToCart, totatPrice}){
     const navigate = useNavigate();
- 
+    
 
 
     return (
       <div className="cart-container">
         <h1>Your Cart</h1>
-        {items.map((item) => (
+        {cartItems.length === 0 && <div>Add more items</div>}
+        {cartItems.map((item) => (
         <div key={item.id}  className="cart-item">
               <img src={item.thumbnail}></img>
-              <div>
-                <h2>{item.title}</h2>
-                <p>Price: {item.price}</p>
+              <div className="cart-item-info">
+                <h2>${item.title}</h2>
+                <p>Price : ${item.price}</p>
               </div>
+              <div className="cart-item-button">
+                <button className="cart-items-add" onClick={() => onAddToCart(item)}>+</button>
+                <button className="cart-items-remove"onClick={()=> onRemoveCart(item)}>-</button>
+             </div>
+            <div className="cart-item-price">
+             {item.quantity} * ${item.price}
+            </div>
         </div>
       ))}
-           {isInCart? <h3>Subtotal : {cartPrice} </h3> : null}
+           {cartItems.length > 0 ? <h3>Subtotal : {totatPrice} </h3> : null}
        {
-          isInCart? <button onClick={() => navigate("/checkout") }>Orders Now</button> : null
+          cartItems.length > 0 ? <button onClick={() => navigate("/checkout") }>Order Now</button> : null
         }
     </div>
     )

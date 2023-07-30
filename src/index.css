@@ -51,7 +51,6 @@
 }
 
  .cart-container{
-    margin-top: 50px;
     text-align: center; 
     height: 100vh;
 } 
@@ -64,12 +63,17 @@
 .cart-item{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-left: 5rem;
   margin-right: 5rem;
   border: 1px solid #ef9273;
   border-radius: 20px;
-
 }
+
+.cart-items-add {
+  margin-right: 1rem;
+}
+
 .product-details {
    display: flex;
    align-items: center;
