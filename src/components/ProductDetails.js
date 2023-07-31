@@ -14,9 +14,9 @@ function ProductDetails({products, onAddToCart}) {
     return (
       <div className="product-details">
         <img src={product.thumbnail}></img>
-        <div>
+        <div className="product-info">
           <h2>{product.title}</h2>
-          <p>Price: {product.price}</p>
+          <p>Price: ${product.price}</p>
           <p>Description: {product.description}</p>
           <button onClick={() => onAddToCart(product)}>Add to cart</button>
         </div>

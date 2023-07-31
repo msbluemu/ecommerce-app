@@ -18,6 +18,7 @@ function App() {
   const[products, setProducts] = useState([]);
   const[cartItems, setCartItems] = useState([]);
   const [cartCount, setCartCount] = useState(0);
+  const [payButton, setPayButton] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -58,6 +59,11 @@ useEffect(() => {
   setCartCount(totalCartCount);
 }, [cartItems]); 
 
+function handlePay(){
+  setPayButton(!payButton);
+  setCartCount(0);
+}
+
   return (
     <div className="app-container">
       <NavBar cartCount={cartCount}/>
@@ -66,7 +72,7 @@ useEffect(() => {
           <Route path="/" element={<ProductList products={products} onAddToCart={handleAddToCart} setProducts={setProducts}/>}/>
           <Route path="/cart" element={<Cart cartItems={cartItems} onRemoveCart={handleRemoveCart} onAddToCart={handleAddToCart} totatPrice={totatPrice}/>  } />
           <Route path="/product/:id" element={<ProductDetails products={products} onAddToCart={handleAddToCart} />} />
-          <Route path="/checkout" element={<Checkout cartItems={cartItems} totalPrice={totatPrice} />}/>
+          <Route path="/checkout" element={<Checkout cartItems={cartItems} totalPrice={totatPrice} onPay={handlePay} payButton={payButton}/>}/>
         </Routes>
       </div>
     </div>

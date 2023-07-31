@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft} from '@fortawesome/free-solid-svg-icons'
+
 
 
 function Cart({cartItems,onRemoveCart, onAddToCart, totatPrice}){
     const navigate = useNavigate();
     
-
-
     return (
       <div className="cart-container">
-        <h1>Your Cart</h1>
-        {cartItems.length === 0 && <div>Add more items</div>}
+        <div className="cart-heading">
+          {cartItems.length > 0 && <FontAwesomeIcon icon={faArrowLeft} className="left-arrow" onClick={() => navigate("/")}/>}
+          <h1>Your Cart</h1>
+        </div>
+        {cartItems.length === 0 && <div>is empty. Add more items</div>}
         {cartItems.map((item) => (
         <div key={item.id}  className="cart-item">
               <img src={item.thumbnail}></img>
@@ -27,7 +31,7 @@ function Cart({cartItems,onRemoveCart, onAddToCart, totatPrice}){
             </div>
         </div>
       ))}
-           {cartItems.length > 0 ? <h3>Subtotal : {totatPrice} </h3> : null}
+           {cartItems.length > 0 ? <h3>Subtotal : ${totatPrice} </h3> : null}
        {
           cartItems.length > 0 ? <button onClick={() => navigate("/checkout") }>Order Now</button> : null
         }
