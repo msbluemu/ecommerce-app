@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../index.css';
 
 
-function NavBar() {
+function NavBar({cartCount}) {
   const navigate = useNavigate();
 
   const handleActionClick = (selectedCategory) => {
@@ -22,7 +22,9 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/cart">Your Cart</Nav.Link>
+              <Nav.Link as={Link} to="/cart">
+                Your Cart {cartCount > 0 && `(${cartCount})`}
+              </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

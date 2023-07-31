@@ -17,6 +17,7 @@ function App() {
 
   const[products, setProducts] = useState([]);
   const[cartItems, setCartItems] = useState([]);
+  const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -52,9 +53,14 @@ function App() {
 
 const totatPrice = cartItems.reduce((price, item) => price + item.quantity * item.price, 0)
 
+useEffect(() => {
+  const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  setCartCount(totalCartCount);
+}, [cartItems]); 
+
   return (
     <div className="app-container">
-      <NavBar />
+      <NavBar cartCount={cartCount}/>
       <div className="content-container">
         <Routes>
           <Route path="/" element={<ProductList products={products} onAddToCart={handleAddToCart} setProducts={setProducts}/>}/>
