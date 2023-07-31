@@ -1,67 +1,124 @@
 {
-  "data": [
+  "products": [
     {
-      "name": "Qianyun Mu",
-      "email": "msbluemu@gmail.com",
-      "address": "24-36 Pacific Highway",
-      "cardnumber": "3330235982",
+      "title": "Apple iPhone 14 Pro Max 256GB",
+      "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
+      "price": "2099",
+      "category": "smartphones",
+      "thumbnail": "/images/1.jpg",
       "id": 1
     },
     {
-      "name": "Qianyun Mu",
-      "email": "msbluemu@gmail.com",
-      "address": "24-36 Pacific Highway",
-      "cardnumber": "3330235982",
+      "title": "Google Pixel 7a 5G 128GB",
+      "description": "Meet Pixel 7a, engineered by Google. The Google Tensor G2 chip makes it fast. The Pixel Camera takes amazing photos and video.",
+      "price": "749",
+      "category": "smartphones",
+      "thumbnail": "/images/2.jpg",
       "id": 2
     },
     {
-      "name": "Qianyun Mu",
-      "email": "msbluemu@gmail.com",
-      "address": "27 Hugh Street",
-      "cardnumber": "353161404844864",
+      "title": "Asus ROG Phone 6 5G 512GB (Black)",
+      "description": "The legend has evolved! The ROG Phone 6 is the latest incarnation of world-beating gaming phone. It harnesses the brute gaming power of the latest Qualcomm® Snapdragon® 8+ Gen 1 Mobile Platform, with a new class leading GameCool 6 thermal system that lets you smash every barrier and break every limit, and a 165 Hz display for a revolutionary visual experience.",
+      "price": "1599",
+      "category": "smartphones",
+      "thumbnail": "/images/3.jpg",
       "id": 3
     },
     {
-      "name": "Qianyun Mu",
-      "email": "msbluemu@gmail.com",
-      "address": "27 Hugh Street",
-      "cardnumber": "353161404844864",
+      "title": "Motorola Razr 40 Ultra 5G 256GB",
+      "description": "Introducing the ultra-modern, ultra-pocketable motorola razr 40 ultra, which expands all possibilities. Thanks to the largest external display of any flip phone1, you can view more at a glance—and do more with it.",
+      "price": "1499",
+      "category": "smartphones",
+      "thumbnail": "/images/4.jpg",
       "id": 4
     },
     {
-      "name": "",
-      "email": "",
-      "address": "",
-      "cardnumber": "",
+      "title": "OPPO Find X5 Pro 5G 256GB",
+      "description": "Futuristic technology, housed in a curved body with cosmic tones, takes your photography quality to new heights.",
+      "price": "1599",
+      "category": "smartphones",
+      "thumbnail": "/images/5.jpg",
       "id": 5
     },
     {
-      "name": "",
-      "email": "",
-      "address": "",
-      "cardnumber": "",
+      "title": "Microsoft Surface Pro 9 13 i5 256GB/8GB ",
+      "description": "Surface Pro 9 gives you the tablet flexibility you want and the laptop performance and battery life4 you need to move through your day — all in one ultra-portable device.",
+      "price": "1799",
+      "category": "laptops",
+      "thumbnail": "/images/6.jpg",
       "id": 6
     },
     {
-      "name": "",
-      "email": "",
-      "address": "",
-      "cardnumber": "",
+      "title": "Apple MacBook Air 13-inch with M2 chip, 256GB SSD (Midnight)",
+      "description": "2022 Apple MacBook Air laptop with M2 chip: 13.6-inch Liquid Retina display, 8GB RAM, 256GB SSD storage, backlit keyboard, 1080p FaceTime HD camera. Works with iPhone and iPad; Midnight.",
+      "price": "1799",
+      "category": "laptops",
+      "thumbnail": "/images/7.jpg",
       "id": 7
     },
     {
-      "name": "",
-      "email": "",
-      "address": "",
-      "cardnumber": "",
+      "title": "Asus VivoBook 15.6 inch Full HD Thin & Light Laptop (1TB)[Intel i7]",
+      "description": "The NanoEdge display gives Vivobook 15 a vast screen area for an immersive viewing experience for work and play. Its wide-view FHD panel features an anti-glare coating to reduce unwanted distractions from irritating glare and reflections, so you can truly focus on what’s in front of you.",
+      "price": "1399",
+      "category": "laptops",
+      "thumbnail": "/images/8.jpg",
       "id": 8
     },
     {
-      "name": "Qianyun Mu",
-      "email": "msbluemu@gmail.com",
-      "address": "27 Hugh Street",
-      "cardnumber": "353161404844864",
+      "title": "Lenovo Yoga Book 9i EVO 13.3 inch 2.8K 2-in-1 Laptop (1TB)[Intel i7]",
+      "description": "The NanoEdge display gives Vivobook 15 a vast screen area for an immersive viewing experience for work and play. Its wide-view FHD panel features an anti-glare coating to reduce unwanted distractions from irritating glare and reflections, so you can truly focus on what’s in front of you.",
+      "price": "1399",
+      "category": "laptops",
+      "thumbnail": "/images/9.jpg",
       "id": 9
+    },
+    {
+      "title": "Alienware m16 16 inch QHD+ 240Hz Gaming Laptop",
+      "description": "The Alienware m16 - 16-inch high-performance gaming laptop with the latest CPU and GPU offerings and advanced thermals that harness its power for smooth and stable performance.",
+      "price": "6299",
+      "category": "laptops",
+      "thumbnail": "/images/10.jpg",
+      "id": 10
+    },
+    {
+      "title": "Bose QuietComfort Noise Cancelling Earbuds II (Midnight Blue)",
+      "description": "These wireless earbuds personalise the noise cancellation and sound performance to fit your ears, so you get deep, immersive sound with powerful bass and the world’s best noise cancellation whether you’re at home or on the go.",
+      "price": "429",
+      "category": "headphones",
+      "thumbnail": "/images/11.jpg",
+      "id": 11
+    },
+    {
+      "title": "Sony WF-1000XM5 True Wireless Noise Cancelling Earbuds (Platinum Silver)",
+      "description": "The WF-1000XM5 reduces external noise over a wide bandwidth, from low to high frequencies. It contains two proprietary processors that cancel more external noise than ever.",
+      "price":"419",
+      "category": "headphones",
+      "thumbnail": "/images/12.jpg",
+      "id": 12
+    },
+    {
+      "title": "Apple AirPods Pro with MagSafe Charging Case [2nd Gen]",
+      "description": "AirPods Pro feature up to 2x more Active Noise Cancellation, plus Adaptive Transparency and Personalised Spatial Audio with dynamic head tracking for immersive sound.",
+      "price":"339",
+      "category": "headphones",
+      "thumbnail": "/images/13.jpg",
+      "id": 13
+    },
+    {
+      "title": "Google Pixel Buds Pro (Charcoal)",
+      "description": "Premium, immersive sound that adapts to you.",
+      "price":"299",
+      "category": "headphones",
+      "thumbnail": "/images/14.jpg",
+      "id": 14
+    },
+    {
+      "title": "Beats Studio Buds + True Wireless Noise Cancelling Earbuds (Transparent)",
+      "description": "Beats Studio Buds + custom acoustic platform packs powerful, balanced sound in a sophisticated, pocketable design.",
+      "price":"269",
+      "category": "headphones",
+      "thumbnail": "/images/15.jpg",
+      "id": 15
     }
   ]
 }

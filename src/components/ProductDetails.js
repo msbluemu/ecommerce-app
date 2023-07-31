@@ -18,8 +18,6 @@ function ProductDetails({products, onAddToCart}) {
           <h2>{product.title}</h2>
           <p>Price: {product.price}</p>
           <p>Description: {product.description}</p>
-          <p>Rating: {product.rating}</p>
-          <p>Stock: {product.stock}</p>
           <button onClick={() => onAddToCart(product)}>Add to cart</button>
         </div>
       </div>

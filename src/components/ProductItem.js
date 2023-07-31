@@ -12,7 +12,7 @@ function ProductItem({product, onAddToCart}) {
           </Link>
           <h4>{title}</h4>
           <p>Price: ${price}</p>
-          <button onClick={() => onAddToCart(product)}>Add to cart</button>
+            <button onClick={() => onAddToCart(product)}>Add to cart</button>
          </div>
      );
 }

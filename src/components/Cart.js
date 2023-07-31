@@ -15,7 +15,7 @@ function Cart({cartItems,onRemoveCart, onAddToCart, totatPrice}){
         <div key={item.id}  className="cart-item">
               <img src={item.thumbnail}></img>
               <div className="cart-item-info">
-                <h2>${item.title}</h2>
+                <h2>{item.title}</h2>
                 <p>Price : ${item.price}</p>
               </div>
               <div className="cart-item-button">

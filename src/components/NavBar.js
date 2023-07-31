@@ -23,13 +23,6 @@ function NavBar() {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/cart">Your Cart</Nav.Link>
-            <NavDropdown title="Categories" id="basic-nav-dropdown">
-              <NavDropdown.Item onClick={() => handleActionClick("smartphones")}>Smartphones</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => handleActionClick("laptops")}>
-                Laptops
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => handleActionClick("skincare")}>Skincare</NavDropdown.Item>
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
