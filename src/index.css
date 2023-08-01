@@ -202,13 +202,13 @@
 
 @media (max-width: 1200px) {
   .product {
-    flex-basis: calc(33.33% - 2rem); /* Display three products per row for screens up to 1200px width */
+    flex-basis: calc(33.33% - 2rem); 
   }
 }
 
 @media (max-width: 768px) {
   .product {
-    flex-basis: calc(50% - 2rem); /* Display two products per row for screens up to 768px width */
+    flex-basis: calc(50% - 2rem); 
   }
 
   .product-details, .cart-item {
@@ -218,7 +218,7 @@
 
 @media (max-width: 576px) {
   .product {
-    flex-basis: calc(100% - 2rem); /* Display one product per row for screens up to 576px width */
+    flex-basis: calc(100% - 2rem); 
   }
 }
 

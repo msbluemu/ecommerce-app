@@ -5,7 +5,7 @@ import { faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 
 
 
-function Cart({cartItems,onRemoveCart, onAddToCart, totatPrice}){
+function Cart({cartItems, onRemoveCart, onAddToCart, totatPrice}){
     const navigate = useNavigate();
     
     return (

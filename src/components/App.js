@@ -21,7 +21,7 @@ function App() {
   const [payButton, setPayButton] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://json-server-product-api-b0e685320ba1.herokuapp.com/products")
      .then((r) => r.json())
      .then((data) => {
       setProducts(data);

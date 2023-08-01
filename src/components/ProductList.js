@@ -53,7 +53,6 @@ function ProductList({ products, setProducts, onAddToCart}) {
             </select>
       </div>
       <ul className="products">
-        {/* Use filterList when searchTerm is not empty, otherwise use products */}
         {searchTerm === "" && selectedCategory === "" ? (
           products.map((product) => (
             <ProductItem key={product.id} product={product} onAddToCart={onAddToCart}/>
