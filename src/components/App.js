@@ -31,7 +31,6 @@ function App() {
   }, []);
 
 
-  
   function handleAddToCart(product) {
     const productExist = cartItems.find((item) => item.id === product.id)
     if(productExist){

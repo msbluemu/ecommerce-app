@@ -189,6 +189,22 @@
   text-align: center;
 }
 
+.no-page-found {
+  text-align: center;
+  padding-top: 100px;
+  height: 100vh;
+}
+
+.no-product-found{
+  height: 100vh;
+  margin-top: 50px;
+  font-size: 30px;
+}
+
+.cart-item-qty{
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   .products {
     display: flex;

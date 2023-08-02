@@ -51,7 +51,7 @@ function ProductList({ products, onAddToCart }) {
             <ProductItem key={product.id} product={product} onAddToCart={onAddToCart} />
           ))
         ) : (
-          <p>No product found</p>
+          <p className="no-product-found">No product found</p>
         )
        }
       </ul>

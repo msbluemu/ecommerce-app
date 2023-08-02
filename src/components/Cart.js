@@ -26,7 +26,7 @@ function Cart({cartItems, onRemoveCart, onAddToCart, totatPrice}){
                 <button className="cart-items-add" onClick={() => onAddToCart(item)}>+</button>
                 <button className="cart-items-remove"onClick={()=> onRemoveCart(item)}>-</button>
              </div>
-            <div className="cart-item-price">
+            <div className="cart-item-qty">
              Qty: {item.quantity}
             </div>
         </div>
