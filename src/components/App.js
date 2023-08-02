@@ -11,6 +11,8 @@ import ProductList from "./ProductList";
 import Cart from "./Cart";
 import ProductDetails from "./ProductDetails";
 import Checkout from "./Checkout";
+import NoPageFound from "./NoPageFound";
+
 
 
 function App() {
@@ -22,34 +24,35 @@ function App() {
 
   useEffect(() => {
     fetch("https://json-server-product-api-b0e685320ba1.herokuapp.com/products")
-     .then((r) => r.json())
-     .then((data) => {
-      setProducts(data);
-     });
+      .then((response) => response.json())
+      .then((data) => {
+          setProducts(data);
+        });
   }, []);
 
-  function handleAddToCart(product) {
+
   
-   const productExist = cartItems.find((item) => item.id === product.id)
-   if(productExist){
-    setCartItems(cartItems.map((item) => item.id === product.id ?
-    {...productExist, quantity: productExist.quantity + 1} : item)
-    );
-   } else{
-    setCartItems([...cartItems, {...product, quantity : 1}]);
-   }
+  function handleAddToCart(product) {
+    const productExist = cartItems.find((item) => item.id === product.id)
+    if(productExist){
+      setCartItems(cartItems.map((item) => item.id === product.id ?
+      {...productExist, quantity: productExist.quantity + 1} : item)
+      );
+    } else{
+      setCartItems([...cartItems, {...product, quantity : 1}]);
+    }
   }
 
  function handleRemoveCart(removedItem){
-   const productExist = cartItems.find((item) => item.id === removedItem.id);
-   if(productExist.quantity === 1){
-    setCartItems(cartItems.filter((item) => item.id !== removedItem.id));
-   } else {
-    setCartItems(cartItems.map((item) =>
-                item.id === removedItem.id ? { ...item, quantity: item.quantity - 1 } : item
-      )
-    );
-  }
+    const productExist = cartItems.find((item) => item.id === removedItem.id);
+    if(productExist.quantity === 1){
+      setCartItems(cartItems.filter((item) => item.id !== removedItem.id));
+    } else {
+      setCartItems(cartItems.map((item) =>
+                  item.id === removedItem.id ? { ...item, quantity: item.quantity - 1 } : item
+        )
+      );
+    }
 }
 
 const totatPrice = cartItems.reduce((price, item) => price + item.quantity * item.price, 0)
@@ -73,6 +76,7 @@ function handlePay(){
           <Route path="/cart" element={<Cart cartItems={cartItems} onRemoveCart={handleRemoveCart} onAddToCart={handleAddToCart} totatPrice={totatPrice}/>  } />
           <Route path="/product/:id" element={<ProductDetails products={products} onAddToCart={handleAddToCart} />} />
           <Route path="/checkout" element={<Checkout cartItems={cartItems} totalPrice={totatPrice} onPay={handlePay} payButton={payButton}/>}/>
+          <Route path="/*" element={<NoPageFound />}/>
         </Routes>
       </div>
     </div>

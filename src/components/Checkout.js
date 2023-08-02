@@ -30,7 +30,7 @@ function Checkout({cartItems, totalPrice, onPay, payButton}){
               <img src={item.thumbnail} alt={item.title} />
               <h2>{item.title}</h2>
               <div>
-                {item.quantity} * ${item.price}
+                {item.quantity} * ${item.price} = ${item.quantity * item.price}
               </div>
             </div>
           ))}
