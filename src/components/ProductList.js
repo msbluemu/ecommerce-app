@@ -1,9 +1,10 @@
 import { React, useState} from "react";
 import ProductItem from "./ProductItem";
 
-function ProductList({ products, onAddToCart }) {
+function ProductList({ products, onAddToCart, loading, setLoading }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  
  
   
   function handleChange(e) {
@@ -46,12 +47,12 @@ function ProductList({ products, onAddToCart }) {
       </div>
       <ul className="products">
       {
-        isProductFound ? (
+       isProductFound ? (
           filteredList.map((product) => (
             <ProductItem key={product.id} product={product} onAddToCart={onAddToCart} />
           ))
         ) : (
-          <p className="no-product-found">No product found</p>
+          <p className="no-product-found">{loading? null: "No Product Found"}</p>
         )
        }
       </ul>

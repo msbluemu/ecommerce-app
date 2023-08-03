@@ -21,12 +21,14 @@ function App() {
   const[cartItems, setCartItems] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [payButton, setPayButton] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://json-server-product-api-b0e685320ba1.herokuapp.com/products")
       .then((response) => response.json())
       .then((data) => {
           setProducts(data);
+          setLoading(false);
         });
   }, []);
 
@@ -71,7 +73,7 @@ function handlePay(){
       <NavBar cartCount={cartCount}/>
       <div className="content-container">
         <Routes>
-          <Route path="/" element={<ProductList products={products} onAddToCart={handleAddToCart} setProducts={setProducts}/>}/>
+          <Route path="/" element={<ProductList products={products} onAddToCart={handleAddToCart} setProducts={setProducts} loading={loading} setLoading={setLoading}/>}/>
           <Route path="/cart" element={<Cart cartItems={cartItems} onRemoveCart={handleRemoveCart} onAddToCart={handleAddToCart} totatPrice={totatPrice}/>  } />
           <Route path="/product/:id" element={<ProductDetails products={products} onAddToCart={handleAddToCart} />} />
           <Route path="/checkout" element={<Checkout cartItems={cartItems} totalPrice={totatPrice} onPay={handlePay} payButton={payButton}/>}/>
